@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+if Rails.env == 'development'
+    (1..100).each do |i|
+        Idea.create(title: "アイデア#{i}", user_name: "ユーザー#{i}", category: "カテゴリ")
+    end
+end
