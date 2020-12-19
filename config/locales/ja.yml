@@ -1,8 +1,17 @@
 ja:
+  activerecord:
+    attributes:
+      idea:
+        user_name: 作成者 
+        title: アイデア名
+        category: カテゴリ
+        story: アイデアの生い立ち
+        trick: コツ・ポイント
+        content: 詳細
   views:
     pagination:
-      first: '最初'
-      last: '最後'
-      previous: '前'
-      next: '次'
-      truncate: '...'
+      first: 最初
+      last: 最後
+      previous: 前
+      next: 次
+      truncate: ...
