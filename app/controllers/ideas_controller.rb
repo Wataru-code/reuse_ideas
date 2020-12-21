@@ -30,9 +30,16 @@ class IdeasController < ApplicationController
     end
 
     def update
-        @idea.update(idea_params)
-
-        redirect_to @idea
+        idea = Idea.new(idea_params)
+        if idea.save
+            flash[:notice] = "「#{idea.title}」が編集されました！"
+            redirect_to idea
+        else
+            redirect_to edit_idea_path, flash: {
+                idea: idea,
+                error_messages: idea.errors.full_messages
+            }
+        end
     end
 
     def destroy
