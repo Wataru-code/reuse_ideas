@@ -17,6 +17,10 @@
 #
 #  fk_rails_...  (idea_id => ideas.id)
 #
+
 class Comment < ApplicationRecord
   belongs_to :idea
+
+  validates :name, presence: true, length: { maximum: 10 }
+  validates :comment, presence: true, length: { maximum: 1000 }
 end

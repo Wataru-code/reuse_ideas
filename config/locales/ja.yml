@@ -8,6 +8,9 @@ ja:
         story: アイデアの生い立ち
         trick: コツ・ポイント
         content: 詳細
+      comment:
+        name: 名前
+        comment: コメント
   views:
     pagination:
       first: 最初
