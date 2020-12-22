@@ -2,7 +2,8 @@ class IdeasController < ApplicationController
     before_action :set_target_idea_id, only: %i[show edit update destroy]
     
     def index
-        @ideas = Idea.page(params[:page])
+        @ideas = params[:tag_id].present? ? Tag.find(params[:tag_id]).ideas : Idea.all
+        @ideas = @ideas.page(params[:page])
     end
 
     def new
