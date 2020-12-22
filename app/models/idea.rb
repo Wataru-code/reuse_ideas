@@ -13,7 +13,9 @@
 #  updated_at :datetime         not null
 #
 class Idea < ApplicationRecord
-    has_many :comments
+    has_many :comments, dependent: :delete_all
+    has_many :idea_tag_relations, dependent: :delete_all
+    has_many :tags, through: :idea_tag_relations
     
     validates :title, presence: true, length: { maximum: 20 }
     validates :trick, presence: true, length: { maximum: 100 }

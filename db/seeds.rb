@@ -10,4 +10,12 @@ if Rails.env == 'development'
     (1..100).each do |i|
         Idea.create(title: "アイデア#{i}", user_name: "ユーザー#{i}", category: "カテゴリ")
     end
+    
+    Tag.create([
+        { name: "服" },
+        { name: "日用品" },
+        { name: "容器"},
+        { name: "家具" },
+        { name: "家電" }
+    ])
 end

@@ -43,16 +43,13 @@ class IdeasController < ApplicationController
     end
 
     def destroy
-        @idea.delete
-
+        @idea.destroy
         redirect_to ideas_path, flash: { notice: "「#{@idea.title}」が削除されました！" }
     end
 
     private
     def idea_params
-        params.require(:idea).permit(
-            :title, :category, :story, :trick, :content, :user_name
-            )
+        params.require(:idea).permit(:title, :category, :story, :trick, :content, :user_name, tag_ids: [])
     end
 
     def set_target_idea_id
